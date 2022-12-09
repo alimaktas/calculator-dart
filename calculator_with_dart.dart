@@ -7,8 +7,12 @@ void main() {
   program:
   while (giris == 1) {
     print(
-        "yapmak istediğiniz işlemi seçiniz: \n1-)Toplama\n2-)Cikarma \n3-)Carpma\n4-)Bolme");
+        "yapmak istediğiniz işlemi seçiniz: \n1-)Toplama\n2-)Cikarma \n3-)Carpma\n4-)Bolme\n5-)Cıkıs");
+
     int? islem = int.parse(stdin.readLineSync()!);
+    if (islem == 5) {
+      exit(0);
+    }
     print("1. Sayiyi Giriniz:");
     int? a = int.parse(stdin.readLineSync()!);
     print("2. Sayiyi Giriniz:");
@@ -39,11 +43,12 @@ void main() {
           print("Sonuc =$bolme ");
         }
         break;
+
       default:
         {
           print("Hatalı İşlem Yaptınız !!! ");
+          continue program;
         }
-        continue program;
     }
   }
 }
